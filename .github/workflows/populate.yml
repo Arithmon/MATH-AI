@@ -1,0 +1,74 @@
+name: populate-artifact
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  populate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout artifact repository
+        uses: actions/checkout@v4
+
+      - name: Checkout frozen source files
+        uses: actions/checkout@v4
+        with:
+          repository: Arithmon/K3
+          ref: main
+          path: _source
+
+      - name: Copy minimal executable set
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p certificates verification/producers
+          for f in \
+            open_chart_theorem quantitative_atlas glue_obligations \
+            smoothness_and_transitions sigma_floor_correction atlas_coverage \
+            bridge_atlas_panel bridge_metric_path face_traversal_leaf; do
+            cp "_source/certificates/${f}.json" "certificates/${f}.json"
+          done
+          for f in \
+            model open_chart_theorem quantitative_atlas glue_obligations \
+            smoothness_and_transitions sigma_floor_correction atlas_coverage; do
+            cp "_source/verification/producers/${f}.py" "verification/producers/${f}.py"
+          done
+          rm -rf _source
+
+      - name: Fail closed on identifying tokens
+        shell: bash
+        run: |
+          set -euo pipefail
+          pattern='Brieuc|Fourni[eè]re|Arithmon|gift-framework|Zenodo|ORCID|arithmon\.com|brieuc|gmail\.com|github\.com/Arithmon|/home/[A-Za-z0-9._-]+|/Users/[A-Za-z0-9._-]+'
+          if grep -RniEI "$pattern" certificates verification/producers README.md LICENSE requirements.txt; then
+            echo 'Identifying token found in review bundle.' >&2
+            exit 1
+          fi
+
+      - name: Install verification dependencies
+        run: python -m pip install --disable-pip-version-check -q -r requirements.txt
+
+      - name: Run quick verification
+        run: python verification/verify.py --quick
+
+      - name: Run full verification
+        run: python verification/verify.py
+
+      - name: Commit materialized artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Anonymous Authors'
+          git config user.email 'anonymous@example.invalid'
+          git add certificates verification/producers
+          if git diff --cached --quiet; then
+            echo 'Artifact already materialized.'
+            exit 0
+          fi
+          git commit -m 'Materialize anonymous verification bundle'
+          git push
