@@ -6,11 +6,13 @@ The mathematical test object is an explicit K3 surface: the complete intersectio
 
 ## What is included
 
-- `certificates/`: nine quantitative artifacts used by the case study.
+- `certificates/`: thirteen records. Nine are checked directly by the verifier; four additional certificates are supporting inputs consumed by replayed producers.
 - `verification/producers/`: the producers required for the five replayed certificates and the one recomputed coverage certificate, plus their shared surface model.
 - `verification/verify.py`: a one-command verifier specialized to this anonymous review bundle.
 
 The three hour-scale certificates are included as frozen artifacts and checked by SHA-256. Their full producing closures are deliberately not included in this minimal review bundle: reproducing them requires a substantially larger computational workspace and is not part of the one-command review path.
+
+The four supporting inputs (`closure_skeleton`, `exact_transitions`, `gluing_contract`, and `uniform_chart_lemma`) are shipped because the replayed producers read them. They are not promoted to independently verified claims by this artifact.
 
 No paper source, author metadata, DOI, project URL, or original K3 repository history is included.
 
