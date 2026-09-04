@@ -1,0 +1,168 @@
+{
+  "artifact": "exact_transitions",
+  "subject": "Exact algebraic transition theorem between the 60 chart types (design record)",
+  "kind": "transition_theorem_design_read_only",
+  "no_measurement_performed": true,
+  "nothing_is_rewritten": true,
+  "upstream": {
+    "amendment_b": "7331ccd075015a66926fb3d75e191a88808f947afb5729c305770ade29410c47",
+    "f1prime_u0": "d2b7fd83f8ab5383910273e0cec1e0e89228059feea78537f8c59d01b643a812",
+    "interval_kernel_mu": "b6da94fd4bae532249ce6c0886c285c70727e7ebdb6e3cfdb74f5792fd4fe4d8"
+  },
+  "mu": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    11
+  ],
+  "n_types": 60,
+  "seed": 20260818,
+  "classification_3540_ordered_pairs": {
+    "classes": [
+      {
+        "S_cap_S2": 0,
+        "g2_in_S": true,
+        "g_in_S2": true,
+        "same_g": false,
+        "count": 180,
+        "reading": "the new gauge is a source ROOT, read inside w: a source determination becomes a parameter of the target (base-moving)"
+      },
+      {
+        "S_cap_S2": 1,
+        "g2_in_S": false,
+        "g_in_S2": false,
+        "same_g": true,
+        "count": 180,
+        "reading": "the new gauge is a source parameter (or the same gauge): rescaling by a base coordinate"
+      },
+      {
+        "S_cap_S2": 1,
+        "g2_in_S": false,
+        "g_in_S2": true,
+        "same_g": false,
+        "count": 360,
+        "reading": "the new gauge is a source parameter (or the same gauge): rescaling by a base coordinate"
+      },
+      {
+        "S_cap_S2": 1,
+        "g2_in_S": true,
+        "g_in_S2": false,
+        "same_g": false,
+        "count": 360,
+        "reading": "the new gauge is a source ROOT, read inside w: a source determination becomes a parameter of the target (base-moving)"
+      },
+      {
+        "S_cap_S2": 1,
+        "g2_in_S": true,
+        "g_in_S2": true,
+        "same_g": false,
+        "count": 720,
+        "reading": "the new gauge is a source ROOT, read inside w: a source determination becomes a parameter of the target (base-moving)"
+      },
+      {
+        "S_cap_S2": 2,
+        "g2_in_S": false,
+        "g_in_S2": false,
+        "same_g": false,
+        "count": 360,
+        "reading": "the new gauge is a source parameter (or the same gauge): rescaling by a base coordinate"
+      },
+      {
+        "S_cap_S2": 2,
+        "g2_in_S": false,
+        "g_in_S2": false,
+        "same_g": true,
+        "count": 360,
+        "reading": "the new gauge is a source parameter (or the same gauge): rescaling by a base coordinate"
+      },
+      {
+        "S_cap_S2": 2,
+        "g2_in_S": false,
+        "g_in_S2": true,
+        "same_g": false,
+        "count": 360,
+        "reading": "the new gauge is a source parameter (or the same gauge): rescaling by a base coordinate"
+      },
+      {
+        "S_cap_S2": 2,
+        "g2_in_S": true,
+        "g_in_S2": false,
+        "same_g": false,
+        "count": 360,
+        "reading": "the new gauge is a source ROOT, read inside w: a source determination becomes a parameter of the target (base-moving)"
+      },
+      {
+        "S_cap_S2": 2,
+        "g2_in_S": true,
+        "g_in_S2": true,
+        "same_g": false,
+        "count": 180,
+        "reading": "the new gauge is a source ROOT, read inside w: a source determination becomes a parameter of the target (base-moving)"
+      },
+      {
+        "S_cap_S2": 3,
+        "g2_in_S": false,
+        "g_in_S2": false,
+        "same_g": false,
+        "count": 120,
+        "reading": "the new gauge is a source parameter (or the same gauge): rescaling by a base coordinate"
+      }
+    ],
+    "n_pairs": 3540,
+    "n_classes": 11,
+    "sum_counts": 3540
+  },
+  "cocycle_exact_rational_points": {
+    "n_tests": 400,
+    "identity_ok": 400,
+    "inverse_ok": 400,
+    "cocycle_ok": 400
+  },
+  "root_relation_transfer_exact_all_ordered_pairs": {
+    "n_pairs": 3540,
+    "n_ok": 3540
+  },
+  "F9_reduction": {
+    "obligation_3_t_ij_algebraic_independent_of_K": "the transition is a rescaling by z_{g'} plus a permutation; it is defined on {z_{g'} nonzero}, which contains the chart domain",
+    "obligation_4_s_j_t_ij_equals_s_i": "an identity when the section is ambient-valued (Krawczyk encloses w, hence Z)",
+    "obligation_5_domain_is_real_overlap": "the transition on the overlap; to be certified only for an EXPLICIT atlas (inclusion in the certified target domain)",
+    "obligation_6_cocycle": "an identity of rescalings (tested exactly above)",
+    "obligation_7_biconditional": "equivalence of two points holds exactly when their sections agree, which holds exactly when one is the image of the other under the transition: an identity, not a measurement",
+    "obligation_8_quotient_is_K": "follows from 1 (covering) and 2 (the chart lemma) together with identities 3 to 7: the map is bijective and locally holomorphic, hence an isomorphism",
+    "reading": "the atlas theorem is a theorem of STRUCTURE: its non-classical content is QUANTITATIVE (the radius, the floors, the constants) and lives entirely in the covering and the chart lemma. The sheet cocycle, the transition groupoid and the A/B/C typing of the regional contract no longer appear in it; they become instruments of VALIDATION again",
+    "what_still_needs_interval": [
+      "the chart lemma per chart: existence, uniqueness and holomorphy of the local inverse on an OPEN set, with radius rho(sigma) (Kantorovich/Krawczyk)",
+      "an explicit atlas: the image of an overlap under the transition must lie in the certified target domain; otherwise nothing"
+    ],
+    "what_the_regional_arc_becomes": [
+      "the transport law is the class where the new gauge lies in S: the source determination becomes a target parameter",
+      "T and D are sign flips: elements of the deck group, whose realisation is read in the class",
+      "the face arc and the support lots: negative controls and validations of the chart lemma and of the inclusions"
+    ]
+  },
+  "checks": {
+    "T1_60_types_3540_ordered_pairs_all_classified": true,
+    "T2_identity_inverse_cocycle_exact_on_all_tests": true,
+    "T3_root_relation_transfer_exact_3540_of_3540": true,
+    "T4_domain_of_t_ij_contains_U_target_from_B5": true
+  },
+  "checks_passed": 4,
+  "checks_total": 4,
+  "n_atteste_pas": [
+    "nothing is proved about the sections: the chart lemma remains the only certified content of the atlas theorem",
+    "the classification is combinatorial (the parameters are distinct); no orbit under permutation is claimed",
+    "the inclusion of the transition image in the target domain is not certified here (an explicit atlas is the next theorem)"
+  ],
+  "issue": "exact_transitions_are_rescalings_cocycle_identity_biconditional_identity_T2_reduces_to_F1_and_F1prime",
+  "perturbation_tests": {
+    "N1_unnormalised_gauge_breaks_cocycle": true,
+    "N2_perturbed_root_relation_breaks_transfer": true
+  },
+  "perturbation_tests_passed": 2,
+  "perturbation_tests_total": 2,
+  "seconds": 1.51,
+  "built_from_head": "4cce6736519eedfc53c1fa3631b8ef3b6330cff9",
+  "self_sha256": "1c0dcd4402261257ce0cf1c336cc8527ae0151666341a53b6abaef853c24317f"
+}

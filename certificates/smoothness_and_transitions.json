@@ -1,0 +1,277 @@
+{
+ "artifact": "smoothness_and_transitions",
+ "subject": "atlas paper — lemma 'at least 3 nonzero coordinates' (smoothness AND coverage), exact factorisation of the pivot, projective invariant q_S of degree 3, diagonal involutions + discriminant of the distinguished patch, explicit transitions",
+ "kind": "exact_algebra_sympy",
+ "stage": "atlas paper",
+ "no_measurement_performed": "exact algebra only",
+ "nothing_is_rewritten": true,
+ "upstream": {
+  "u1": "cb0327b0cb4fb053e4566871e061cf40a7c9dd795b33a49ee2783d1a660dc28c",
+  "u1_outcome": "uniform_open_chart_theorem_certified",
+  "generators": "e684bf9970572553714af355c5533154cffd377614581f07ac44df7ce72a335a",
+  "d3_read_from_u1": {
+   "tau": 0.6,
+   "minor_floor": 4.8,
+   "verdict": "CERTIFIED"
+  }
+ },
+ "A_three_nonzero_lemma": {
+  "all_15_pairs_rank2": true,
+  "pair_minors": {
+   "0,1": {
+    "minors": [
+     "1",
+     "3",
+     "2"
+    ],
+    "rank2": true
+   },
+   "0,2": {
+    "minors": [
+     "2",
+     "8",
+     "6"
+    ],
+    "rank2": true
+   },
+   "0,3": {
+    "minors": [
+     "4",
+     "24",
+     "20"
+    ],
+    "rank2": true
+   },
+   "0,4": {
+    "minors": [
+     "6",
+     "48",
+     "42"
+    ],
+    "rank2": true
+   },
+   "0,5": {
+    "minors": [
+     "10",
+     "120",
+     "110"
+    ],
+    "rank2": true
+   },
+   "1,2": {
+    "minors": [
+     "1",
+     "5",
+     "6"
+    ],
+    "rank2": true
+   },
+   "1,3": {
+    "minors": [
+     "3",
+     "21",
+     "30"
+    ],
+    "rank2": true
+   },
+   "1,4": {
+    "minors": [
+     "5",
+     "45",
+     "70"
+    ],
+    "rank2": true
+   },
+   "1,5": {
+    "minors": [
+     "9",
+     "117",
+     "198"
+    ],
+    "rank2": true
+   },
+   "2,3": {
+    "minors": [
+     "2",
+     "16",
+     "30"
+    ],
+    "rank2": true
+   },
+   "2,4": {
+    "minors": [
+     "4",
+     "40",
+     "84"
+    ],
+    "rank2": true
+   },
+   "2,5": {
+    "minors": [
+     "8",
+     "112",
+     "264"
+    ],
+    "rank2": true
+   },
+   "3,4": {
+    "minors": [
+     "2",
+     "24",
+     "70"
+    ],
+    "rank2": true
+   },
+   "3,5": {
+    "minors": [
+     "6",
+     "96",
+     "330"
+    ],
+    "rank2": true
+   },
+   "4,5": {
+    "minors": [
+     "4",
+     "72",
+     "308"
+    ],
+    "rank2": true
+   }
+  },
+  "statement": "at most 2 nonzero coordinates ⇒ W·(w_i,w_j)ᵀ = 0 with W of rank 2 ⇒ all vanish: not a point of P⁵",
+  "use_1_smoothness": "the triple with nonzero coordinates has det M_S ≠ 0 ⇒ Jacobian of rank 3 ⇒ X smooth",
+  "use_2_coverage": "det M_S ≠ 0 ⟺ Z ∈ U_S ⇒ the pivot open sets COVER X (qualitative coverage, exact)",
+  "what_the_audit_adds": "the quantitative FLOOR (τ, m) only — not the coverage"
+ },
+ "B_pivot_factorisation": {
+  "identity": "det M_S = 8 V_S z_{s1}z_{s2}z_{s3} / (c0 c1 c2)",
+  "verified_all_20_triples": true,
+  "example_S_345": "64*sqrt(510)*z3*z4*z5/17765",
+  "c_k_squared": [
+   "6",
+   "209",
+   "17765"
+  ]
+ },
+ "C_projective_invariant": {
+  "det_homogeneous_degree_3": true,
+  "q_S": "q_S(Z) = |det M_S(Z)| / ||Z||^3",
+  "scale_invariant": true,
+  "reading": "the certified radius is read off a projective invariant; the sector |z_g| = max|z_t| is a SELECTOR of a representative, not an open set of the cover"
+ },
+ "D_involutions_and_branch": {
+  "diagonal_sign_involutions_preserve_all_F_k": true,
+  "group_order_mod_projective_scalar": 32,
+  "generators": "sigma_1..sigma_5 (sigma_0 = -sigma_1...sigma_5 in P^5)",
+  "patch": {
+   "S": [
+    3,
+    4,
+    5
+   ],
+   "gauge": 0,
+   "base": [
+    1,
+    2
+   ]
+  },
+  "radicands": {
+   "3": "-15*u**2/4 - 8*v**2/3 - 5",
+   "4": "27*u**2/8 + 2*v**2 + 5",
+   "5": "-5*u**2/8 - v**2/3 - 1"
+  },
+  "branch_locus": "{R_{s1}R_{s2}R_{s3} = 0}",
+  "discriminant_expanded": "2025*u**6/256 + 465*u**4*v**2/32 + 2235*u**4/64 + 53*u**2*v**4/6 + 1031*u**2*v**2/24 + 205*u**2/4 + 16*v**6/9 + 118*v**4/9 + 95*v**2/3 + 25",
+  "discriminant_total_degree": 6
+ },
+ "E_explicit_transitions": {
+  "elementary_swap": {
+   "from": [
+    3,
+    4,
+    5
+   ],
+   "to": [
+    2,
+    4,
+    5
+   ],
+   "P_matrix_rows": [
+    [
+     "-6",
+     "-15",
+     "-45"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "rows_that_change": 1,
+   "coordinate_form": "z_{s'} = eps_{s'} sqrt((P w_S)_{s'})"
+  },
+  "gauge_change": "(S,g) -> (S,g') : projective rescaling by z_g/z_{g'}"
+ },
+ "F_product_to_factors": {
+  "pivot_threshold_m": "4",
+  "chain": "|det M_S^alg| > m ⇒ ∏|z_s| > m/(8|V_S|) ; |u|,|v| ≤ 1 ⇒ |z_s| ≤ B_s = sqrt(|a|+|b|+|c|) ⇒ |z_{s_i}| > m/(8|V_S| ∏_{j≠i} B_{s_j})",
+  "worst_lower_bound_over_60_types": "0.0009571170520523627",
+  "attained_at": {
+   "S": [
+    3,
+    4,
+    5
+   ],
+   "gauge": 0,
+   "coordinate": 5
+  },
+  "reading": "separation of the sheets is UNIFORM on the certified domains: two sheet records differing in slot s lie at distance at least 2x this bound"
+ },
+ "G_grassmannian": {
+  "pivots_are_plucker_coordinates_of_rowspace_dF": true,
+  "statement": "dF = 2 V diag(z) is 3x6; its row space is a point of Gr(3,6) and its minor S equals det M_S^alg",
+  "chart_reading": "the 20 triples = standard coordinate charts of Gr(3,6) pulled back; elementary swap = standard change of chart",
+  "nerve_caveat": "J(6,3) is the adjacency graph of the ELEMENTARY changes of chart, not the nerve of the cover (the standard charts of Gr(3,6) all meet)"
+ },
+ "does_not_attest": [
+  "the quantitative coverage floor (tau = 0.6, m = 4.8 — upstream certificate read by U1)",
+  "the certified radius (U1)",
+  "the geometry of the bridges",
+  "nothing metric",
+  "nothing about the other fronts"
+ ],
+ "checks": {
+  "Q1_all_pairs_rank2_three_nonzero_lemma": true,
+  "Q2_pivot_factorisation_exact_all_20_triples": true,
+  "Q3_det_homogeneous_degree_3_and_q_invariant": true,
+  "Q4_diagonal_involutions_preserve_the_three_quadrics": true,
+  "Q5_branch_discriminant_degree_6": true,
+  "Q6_elementary_swap_changes_exactly_one_row": true,
+  "Q7_upstream_read": true,
+  "Q8_product_to_factors_positive_uniform_bound": true,
+  "Q9_pivots_are_plucker_coordinates_of_dF": true
+ },
+ "checks_passed": 9,
+ "checks_total": 9,
+ "outcome": "atlas_paper_three_nonzero_lemma_carries_smoothness_and_coverage_pivot_degree3_invariant_transitions_explicit",
+ "seconds": 0.4,
+ "perturbation_tests": {
+  "N1_mu_repeat_breaks_three_nonzero_lemma": true,
+  "N2_bad_factor_reddens_pivot_identity": true,
+  "N3_degree_2_reddens_projective_invariance": true
+ },
+ "perturbation_tests_passed": 3,
+ "perturbation_tests_total": 3,
+ "built_from_head": "2cb76b9b6cebfc2fbfcde68ab7348f63aaaa0fe9",
+ "self_sha256": "811bb50974dd44ff640d1bf90e5b233f4de440112bdd258b1104c15409b0af3a",
+ "provenance": {
+  "sympy_version": "1.14.0"
+ }
+}
