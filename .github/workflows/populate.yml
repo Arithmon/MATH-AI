@@ -30,7 +30,8 @@ jobs:
           for f in \
             open_chart_theorem quantitative_atlas glue_obligations \
             smoothness_and_transitions sigma_floor_correction atlas_coverage \
-            bridge_atlas_panel bridge_metric_path face_traversal_leaf; do
+            bridge_atlas_panel bridge_metric_path face_traversal_leaf \
+            closure_skeleton exact_transitions gluing_contract uniform_chart_lemma; do
             cp "_source/certificates/${f}.json" "certificates/${f}.json"
           done
           for f in \
@@ -39,6 +40,25 @@ jobs:
             cp "_source/verification/producers/${f}.py" "verification/producers/${f}.py"
           done
           rm -rf _source
+
+      - name: Adapt paper-dependent producer to anonymous bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('verification/producers/glue_obligations.py')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('PAPER = ROOT / "paper" / "certified_k3_atlas.md"\n', '')
+          s = s.replace('                   and bool(br) and PAPER.exists())',
+                        '                   and bool(br))')
+          s = s.replace(', "paper": sha(PAPER) if PAPER.exists() else None', '')
+          s = s.replace('"Q8_upstream_and_paper_read"',
+                        '"Q8_upstream_certificates_read"')
+          if 'PAPER.exists()' in s or 'sha(PAPER)' in s:
+              raise SystemExit('paper dependency survived anonymous adaptation')
+          p.write_text(s, encoding='utf-8')
+          PY
 
       - name: Fail closed on identifying tokens
         shell: bash
