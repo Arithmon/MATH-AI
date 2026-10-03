@@ -1,6 +1,10 @@
-# Anonymous K3 verification artifact
+# K3 verification artifact
 
-This repository is the minimal executable artifact accompanying a double-blind case study on failure-driven verification in human–AI mathematics.
+This repository is the minimal executable artifact accompanying the paper:
+
+> Brieuc de La Fournière. *Failure-Driven Verification in Human–AI Mathematics: An Explicit K3 Case Study.* Accepted as a poster at the 6th Workshop on Mathematical Reasoning and AI (MATH-AI), NeurIPS 2026 (non-archival). Preprint: [doi:10.5281/zenodo.23117970](https://doi.org/10.5281/zenodo.23117970).
+
+The bundle was prepared for double-blind review and is unchanged since; only this README was updated after de-anonymization.
 
 The mathematical test object is an explicit K3 surface: the complete intersection of three diagonal quadrics in `P^5` with parameters `(1, 2, 3, 5, 7, 11)`. The submission studies the verification workflow rather than claiming that this artifact constitutes an independent peer review of the underlying K3 theorem.
 
@@ -14,7 +18,7 @@ The three hour-scale certificates are included as frozen artifacts and checked b
 
 The four supporting inputs (`closure_skeleton`, `exact_transitions`, `gluing_contract`, and `uniform_chart_lemma`) are shipped because the replayed producers read them. They are not promoted to independently verified claims by this artifact.
 
-No paper source, author metadata, DOI, project URL, or original K3 repository history is included.
+No paper source or original K3 repository history is included. The complete K3 atlas, with its full production closure, is archived at [doi:10.5281/zenodo.22047469](https://doi.org/10.5281/zenodo.22047469).
 
 ## Run
 
